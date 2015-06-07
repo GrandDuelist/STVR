@@ -1,4 +1,4 @@
-CREATE VIEW desktop_firefox_steps as SELECT library_casestep.instruction, library_casestep.expected,
+CREATE VIEW desktop_firefox_steps as SELECT library_casestep.id, library_casestep.instruction, library_casestep.expected,
 	   library_caseversion.name as version_name,library_caseversion.description,library_caseversion.status,
 	   core_productversion.version,core_product.name  as product_name
 FROM  library_casestep,library_caseversion,core_productversion,core_product

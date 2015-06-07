@@ -1,0 +1,4 @@
+SELECT desktop_firefox_steps.instruction,desktop_firefox_steps.version,execution_result.status
+FROM desktop_firefox_steps,execution_stepresult,execution_result
+WHERE desktop_firefox_steps.id = execution_stepresult.step_id
+and execution_stepresult.result_id = execution_result.id
