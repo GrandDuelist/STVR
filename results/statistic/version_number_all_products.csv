@@ -1,0 +1,23 @@
+count(*),name
+1,Affiliates
+1,"AMO (Addons.mozilla.org)"
+1,Automation
+1,"Battery API"
+1,BrowserID
+27,"Desktop Firefox"
+8,Firefox
+6,"Firefox Metro"
+16,"Firefox OS"
+2,"Firefox OS Tablet"
+3,Marketplace
+70,"Mobile Firefox"
+1,Mozillians
+13,MozTrap
+1,Pancake
+4,"product for testing"
+1,"Raspberry jam"
+3,SUMO
+1,Test
+2,testing
+1,Thunderbird
+1,"Tony's product"
