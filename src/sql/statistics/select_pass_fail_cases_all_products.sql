@@ -1,0 +1,4 @@
+SELECT failed_cases.failed_number,pass_cases.pass_number,failed_cases.product_name
+FROM (SELECT count(*) as failed_number,all_products_steps_result.status,all_products_steps_result.product_name FROM all_products_steps_result  WHERE all_products_steps_result.status="failed" GROUP BY all_products_steps_result.product_name) as failed_cases,
+      (SELECT count(*) as pass_number,all_products_steps_result.status,all_products_steps_result.product_name FROM all_products_steps_result  WHERE all_products_steps_result.status="passed" GROUP BY all_products_steps_result.product_name) as pass_cases 
+WHERE failed_cases.product_name = pass_cases.product_name
