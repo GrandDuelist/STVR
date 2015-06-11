@@ -1,0 +1,13 @@
+count(*),product_name
+49,"AMO (Addons.mozilla.org)"
+1,Automation
+2,BrowserID
+768,"Desktop Firefox"
+38,"Firefox Metro"
+5665,"Firefox OS"
+737,Marketplace
+2796,"Mobile Firefox"
+36,MozTrap
+1,"product for testing"
+60,Thunderbird
+1,"Tony's product"

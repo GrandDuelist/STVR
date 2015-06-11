@@ -1,0 +1,20 @@
+cases_step_number,cases_with_result_number,cases_without_result_number,product_name
+727,49,678,AMO (Addons.mozilla.org)
+8,1,7,Automation
+12,0,12,Battery API
+311,2,309,BrowserID
+31441,768,30673,Desktop Firefox
+4,0,4,Firefox
+1014,38,976,Firefox Metro
+204248,5665,198583,Firefox OS
+6705,737,5968,Marketplace
+92296,2796,89500,Mobile Firefox
+7,0,7,Mozillians
+3744,0,3744,MozTrap
+9,0,9,Pancake
+14,1,13,product for testing
+40,0,40,SUMO
+7,0,7,Test
+928,60,868,Thunderbird
+3,1,2,Tony's product
+,,,

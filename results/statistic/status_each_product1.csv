@@ -1,0 +1,13 @@
+failed_number,passed_number,product_name
+49,0,"AMO (Addons.mozilla.org)"
+1,0,Automation
+2,0,BrowserID
+766,1,"Desktop Firefox"
+38,0,"Firefox Metro"
+5665,0,"Firefox OS"
+736,0,Marketplace
+2795,1,"Mobile Firefox"
+15,21,MozTrap
+1,0,"product for testing"
+60,0,Thunderbird
+1,0,"Tony's product"
