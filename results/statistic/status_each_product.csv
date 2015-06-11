@@ -1,0 +1,18 @@
+count(*),status,product_name
+138,failed,"AMO (Addons.mozilla.org)"
+1,failed,Automation
+2,failed,BrowserID
+1354,failed,"Desktop Firefox"
+59,failed,"Firefox Metro"
+9518,failed,"Firefox OS"
+7552,failed,Marketplace
+8111,failed,"Mobile Firefox"
+16,failed,MozTrap
+1,failed,"product for testing"
+83,failed,Thunderbird
+3,failed,"Tony's product"
+3,invalidated,"Desktop Firefox"
+2,passed,"Desktop Firefox"
+1,passed,"Mobile Firefox"
+22,passed,MozTrap
+1,started,Marketplace
