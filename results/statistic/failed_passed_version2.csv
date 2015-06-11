@@ -1,0 +1,112 @@
+cases_steps_number,,product_name,version
+727,,AMO (Addons.mozilla.org),1
+8,,Automation,1
+12,,Battery API,1
+311,,BrowserID,1
+14,,Desktop Firefox,12
+7,,Desktop Firefox,13
+5,,Desktop Firefox,14
+814,,Desktop Firefox,15
+869,,Desktop Firefox,16
+992,,Desktop Firefox,17
+1072,,Desktop Firefox,18
+538,,Desktop Firefox,19
+1046,,Desktop Firefox,20
+1299,,Desktop Firefox,21
+1437,,Desktop Firefox,22
+490,,Desktop Firefox,22.0a1
+2452,,Desktop Firefox,23
+2682,,Desktop Firefox,24
+2848,,Desktop Firefox,25
+3046,,Desktop Firefox,26
+3116,,Desktop Firefox,27
+1107,,Desktop Firefox,28
+1028,,Desktop Firefox,29
+959,,Desktop Firefox,30
+61,,Desktop Firefox,ESR10
+107,,Desktop Firefox,ESR17
+5452,,Desktop Firefox,ESR24
+1,,Firefox,12
+1,,Firefox,13
+1,,Firefox,14
+1,,Firefox,15
+165,,Firefox Metro,Firefox 24
+332,,Firefox Metro,Firefox 25
+130,,Firefox Metro,Firefox 26
+251,,Firefox Metro,Firefox 28
+136,,Firefox Metro,Firefox 29
+10485,,Firefox OS,v1.0
+11233,,Firefox OS,v1.0.1
+7359,,Firefox OS,v1.0.2 (Test)
+7360,,Firefox OS,v1.0.3 (Test)
+5155,,Firefox OS,v1.1
+19075,,Firefox OS,v1.1.0
+37351,,Firefox OS,v1.1.0 hd
+23254,,Firefox OS,v1.2
+25509,,Firefox OS,v1.3
+22292,,Firefox OS,v1.3 Tablet
+25492,,Firefox OS,v1.4+
+4442,,Firefox OS,v2
+5241,,Firefox OS,v2.0
+2842,,Marketplace,1
+2158,,Marketplace,1.0 Seahorse
+1705,,Marketplace,Colombia
+55,,Mobile Firefox,13
+66,,Mobile Firefox,14
+1343,,Mobile Firefox,15
+1351,,Mobile Firefox,15 for Tablets
+201,,Mobile Firefox,15 [Tablet]
+1476,,Mobile Firefox,16
+2611,,Mobile Firefox,16 for Tablets
+350,,Mobile Firefox,16 [Tablet]
+2749,,Mobile Firefox,17
+1451,,Mobile Firefox,17 Tablets
+2807,,Mobile Firefox,18
+1470,,Mobile Firefox,18 Tablets
+1582,,Mobile Firefox,19
+1596,,Mobile Firefox,19 Tablets
+1618,,Mobile Firefox,20
+1624,,Mobile Firefox,20 Tablets
+1665,,Mobile Firefox,21
+1619,,Mobile Firefox,21 Tablet
+1741,,Mobile Firefox,22
+1754,,Mobile Firefox,22 Tablet
+2009,,Mobile Firefox,23
+1999,,Mobile Firefox,23 Tablet
+2216,,Mobile Firefox,24
+2283,,Mobile Firefox,24 Tablet
+2301,,Mobile Firefox,25
+2357,,Mobile Firefox,25 Tablet
+2558,,Mobile Firefox,26
+2631,,Mobile Firefox,26 Tablet
+4688,,Mobile Firefox,27
+4804,,Mobile Firefox,27 Tablet
+13677,,Mobile Firefox,28
+7141,,Mobile Firefox,28 Tablet
+2412,,Mobile Firefox,29
+2565,,Mobile Firefox,29 Tablet
+4711,,Mobile Firefox,30
+4815,,Mobile Firefox,30 Tablet
+7,,Mozillians,1
+44,,MozTrap,0.8
+231,,MozTrap,0.9
+395,,MozTrap,1
+258,,MozTrap,1.1
+326,,MozTrap,1.1.1
+314,,MozTrap,1.1.2
+326,,MozTrap,1.2
+326,,MozTrap,1.3
+366,,MozTrap,1.3.5
+381,,MozTrap,1.3.7
+383,,MozTrap,1.4
+394,,MozTrap,1.4.5
+9,,Pancake,1
+1,,product for testing,1
+1,,product for testing,2
+7,,product for testing,3
+5,,product for testing,5
+30,,SUMO,1
+10,,SUMO,2
+7,,Test,1
+928,,Thunderbird,Trunk
+3,,Tony's product,1
