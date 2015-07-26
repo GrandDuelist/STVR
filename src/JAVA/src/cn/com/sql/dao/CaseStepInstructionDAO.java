@@ -15,6 +15,16 @@ import cn.com.type.asistant.Page;
 public class CaseStepInstructionDAO {
 	Connection conn;
 
+	public CaseStepInstructionDAO(){
+		
+	}
+	public CaseStepInstructionDAO(Connection conn){
+		this.conn = conn;
+	}
+	
+	public void setConnection(Connection conn){
+		this.conn=conn;
+	}
 	/**
 	 * 添加instruction 到一个测试案例中
 	 * @param caseInstruction
@@ -64,7 +74,9 @@ public class CaseStepInstructionDAO {
 		for(int i=0;i<stepResults.size();i++){
 			CaseStepInstructionBean caseInstruction = new CaseStepInstructionBean();
 			caseInstruction.testcase = stepResults.get(i);
+			caseInstructions.add(caseInstruction);
 		}
+		this.selectByList(caseInstructions);
 		return caseInstructions;
 	}
 	
@@ -75,6 +87,7 @@ public class CaseStepInstructionDAO {
 	 */
 	public List<CaseStepInstructionBean> selectByPage(Page page){
 		StepResultProductDAO stepResultDAO = DAOFactory.getStepResultProductDAO();
+		stepResultDAO.conn = this.conn;
 		List<StepResultProductBean> stepResults = stepResultDAO.selectByPage(page);
 		return this.envelopStepResult(stepResults);
 	}

@@ -12,4 +12,7 @@ public class DAOFactory {
 	public static CaseStepInstructionDAO getCaseStepInstructionDAO(){
 		return new CaseStepInstructionDAO();
 	}
+	public static CaseStepBugsDAO getCaseStepBugsDAO(){
+		return new CaseStepBugsDAO();
+	}
 }

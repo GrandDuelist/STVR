@@ -6,7 +6,14 @@ public class StepResultProductBean {
 	int caseversionID;
 	String version;
 	String product;
+	int resultID;
 	
+	public int getResultID(){
+		return this.resultID;
+	}
+	public void setResultID(int resultID){
+		this.resultID = resultID;
+	}
 	public int getId() {
 		return id;
 	}

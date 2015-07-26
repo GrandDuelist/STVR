@@ -25,7 +25,9 @@ END IF;
 	BEGIN
 		DECLARE set_inner INT DEFAULT 0;
 		DECLARE ConvergeResultStatus varchar(50) DEFAULT "passed";
-		DECLARE rs2 CURSOR FOR SELECT  passed_failed_view.result_status  FROM passed_failed_view WHERE passed_failed_view.caseversion_id = CurrentCaseID;
+		DECLARE result_id INT default 0;
+		DECLARE temp_result_id INT;
+		DECLARE rs2 CURSOR FOR SELECT  passed_failed_view.result_status, passed_failed_view.result_id  FROM passed_failed_view WHERE passed_failed_view.caseversion_id = CurrentCaseID;
 		declare continue handler for not found set set_inner = 1; 
 		open rs2;
 		get_result: LOOP
@@ -33,19 +35,22 @@ END IF;
 			leave get_result;
 		end if; 
 		SET ConvergeResultStatus = "passed";
-		FETCH NEXT FROM rs2 INTO  ResultStatus;
+		FETCH NEXT FROM rs2 INTO  ResultStatus,temp_result_id;
 		if ResultStatus = "failed" then
 		SET ConvergeResultStatus = "failed";
+		SET result_id = temp_result_id;
 		END IF;
 
 END LOOP get_result;
 
 INSERT INTO `firefox`.`step_result_table`
 		(`result_status`,
-	`caseversion_id`)
+	`caseversion_id`,
+	`result_id`)
 		VALUES
 (ConvergeResultStatus,
-	CurrentCaseID);
+	CurrentCaseID,
+	result_id);
 
 
 close rs2;

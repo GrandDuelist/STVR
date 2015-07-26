@@ -57,9 +57,11 @@ public class StepResultProductDAO implements DaoBaseInterface {
 				current.setProduct(rs.getString("name"));
 				current.setVersion(rs.getString("version"));
 				current.setResultStatus(rs.getString("result_status"));
+				current.setResultID(rs.getInt("result_id"));
 				results.add(current);
 				
 			}
+			page.practicalCurrentPageNum = results.size();
 			return results;
 
 		} catch (SQLException e) {
