@@ -5,6 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class BasicFileController {
+	
+	public static void copyFile(String sourceFilePath, String targetFilePath){
+		
+	}
+	
 	public static boolean createFile(String filePath){
 		boolean result  = false;
 		File file = new File(filePath);

@@ -2,6 +2,7 @@ package cn.com.type.asistant;
 
 public class DataMapping {
 	public static String TOP_INSTRUCTION_DIR =  "/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA";  //存放所有文件的最顶层目录
+	public static String TOP_LAYERIZED_DIR = "/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA";
 	public static String TOP_FAULT_MATRIX_DIR = "/home/zhihan/Workspace/STVR/data/FAULT_MATRIX";
 	public static String PATH_SEPERATOR = "/";
 	public static String FILE_PRELIX = "caseversionid = ";

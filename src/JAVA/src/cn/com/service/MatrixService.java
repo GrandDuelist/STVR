@@ -38,6 +38,9 @@ public class MatrixService {
 		this.outputFaultMatrix();
 	}
 	
+	/**
+	 * 将productsMap 输出为fault matrix
+	 */
 	public void outputFaultMatrix(){
 		Iterator<Entry<String, Product>> it = this.productsMap.entrySet().iterator();
 		System.out.println(this.productsMap.entrySet().size());
@@ -64,6 +67,9 @@ public class MatrixService {
 		
 	}
 
+	/**
+	 * 找出一个版本出现的所有bugs
+	 */
 	public void generateFaultMatrixMap() {
 		Iterator<Entry<String, Product>> it = this.productsMap.entrySet().iterator();
 		
@@ -89,6 +95,9 @@ public class MatrixService {
 		}
 	}
 
+	/**
+	 * 将caseBugs转换为productsMap，但是没有每个产品所有的bugs
+	 */
 	public void envelopProducts() {
 		Page page = new Page(1, DataMapping.MAX_NUM_TEST_CASE);
 		CaseStepBugsDAO casebugDAO = DAOFactory.getCaseStepBugsDAO();
