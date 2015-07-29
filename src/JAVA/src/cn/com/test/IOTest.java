@@ -12,11 +12,12 @@ public class IOTest {
 		/*BasicFileController.writeFileByFileOutputStream("/home/zhihan/Downloads/test", "nihao");*/
 		
 		PersonizedFileIO io = new PersonizedFileIO("/home/zhihan/Downloads/test");
-		
+		BasicFileController.copyFile("/home/zhihan/Downloads/letter.pdf", "/home/zhihan/Downloads/letter2.pdf");
+		/*
 		io.appendFile("test\n");
 		io.appendFile("2222");
 		io.appendFile("1111");
 		
-		io.close();
+		io.close();*/
 	}
 }

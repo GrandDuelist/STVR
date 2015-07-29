@@ -6,7 +6,7 @@ import java.util.List;
 public class PreviousClusterBean{
 	String productName;
 	String previousVersionName;
-	List<String> testCaseNames = new ArrayList<String>();
+	List<StepToPerformBean> testCases = new ArrayList<StepToPerformBean>();
 	
 	public String getProductName() {
 		return productName;
@@ -20,12 +20,13 @@ public class PreviousClusterBean{
 	public void setPreviousVersionName(String previousVersionName) {
 		this.previousVersionName = previousVersionName;
 	}
-	public List<String> getTestCaseNames() {
-		return testCaseNames;
+	public List<StepToPerformBean> getTestCases() {
+		return testCases;
 	}
-	public void setTestCaseNames(List<String> testCaseNames) {
-		this.testCaseNames = testCaseNames;
+	public void setTestCases(List<StepToPerformBean> testCases) {
+		this.testCases = testCases;
 	}
+	
 	
 	
 }

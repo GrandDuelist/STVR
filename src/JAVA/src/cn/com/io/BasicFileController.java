@@ -1,13 +1,45 @@
 package cn.com.io;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class BasicFileController {
 	
-	public static void copyFile(String sourceFilePath, String targetFilePath){
+	public static void copyFile(String oldPath, String newPath){
 		
+	/*	String cmd = "cp "+sourceFilePath+" "+targetFilePath;
+		Runtime run = Runtime.getRuntime();
+		try {
+			Process p = run.exec(cmd);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		   try     {    
+               int     bytesum     =     0;    
+               int     byteread     =     0;    
+               File     oldfile     =     new     File(oldPath);    
+               if     (oldfile.exists())     {      
+                       InputStream     inStream     =     new     FileInputStream(oldPath);     
+                       FileOutputStream     fs     =     new     FileOutputStream(newPath);    
+                       byte[]     buffer     =     new     byte[1444];    
+                       int     length;    
+                       while     (     (byteread     =     inStream.read(buffer))     !=     -1)     {    
+                               bytesum     +=     byteread;        
+                               System.out.println(bytesum);    
+                               fs.write(buffer,     0,     byteread);    
+                       }    
+                       inStream.close();  
+                       fs.close();
+               }    
+       }    
+       catch     (Exception     e)     {    
+               System.out.println( "error  ");    
+               e.printStackTrace();    
+       }    
 	}
 	
 	public static boolean createFile(String filePath){

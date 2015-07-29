@@ -9,6 +9,7 @@ public class StepToPerformBean {
 	String versionName;
 	String fileName;
 	public boolean hasBeenClustered = false;
+	public String fromTestCaseFileName="";
 	
 	
 	
