@@ -1,0 +1,6 @@
+     [,1]       [,2]      [,3]     [,4]     [,5]    
+[1,] "firefox"  "tab"     "click"  "prefer" "window"
+[2,] "bookmark" "select"  "folder" "click"  "tag"   
+[3,] "prefer"   "firefox" "select" "click"  "option"
+[4,] "download" "file"    "page"   "click"  "consol"
+[5,] "tab"      "open"    "bar"    "window" "menu"  

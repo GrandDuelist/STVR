@@ -1,0 +1,11 @@
+      [,1]       [,2]       [,3]      [,4]       [,5]   
+ [1,] "tab"      "page"     "load"    "locat"    "bar"  
+ [2,] "bookmark" "folder"   "select"  "toolbar"  "menu" 
+ [3,] "firefox"  "ctrl"     "screen"  "full"     "mac"  
+ [4,] "click"    "fe"       "rss"     "applic"   "test" 
+ [5,] "search"   "bar"      "type"    "enter"    "url"  
+ [6,] "tab"      "open"     "window"  "firefox"  "close"
+ [7,] "click"    "menu"     "context" "toolbar"  "page" 
+ [8,] "prefer"   "firefox"  "option"  "click"    "tool" 
+ [9,] "download" "firefox"  "file"    "instal"   "test" 
+[10,] "tag"      "bookmark" "error"   "password" "page" 

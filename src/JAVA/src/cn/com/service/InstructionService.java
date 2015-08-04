@@ -32,7 +32,7 @@ public class InstructionService {
 		String dir = topDirectory + DataMapping.PATH_SEPERATOR + productName
 				+ DataMapping.PATH_SEPERATOR + version;
 		String filePath = dir + DataMapping.PATH_SEPERATOR
-				+DataMapping.FILE_PRELIX+ caseInstruction.testcase.getCaseversionID();
+				+DataMapping.FILE_PRELIX+ caseInstruction.testcase.getCaseversionID()+DataMapping.STRING_SEPERATOR+caseInstruction.testcase.getResultStatus(); //添加一个status
 		BasicFileController.createDirectory(dir);
 
 		PersonizedFileIO io = new PersonizedFileIO(filePath);

@@ -10,4 +10,7 @@ public class GenerateLayerizedStepToPerform {
 		String targetDir = DataMapping.TOP_LAYERIZED_DIR+DataMapping.PATH_SEPERATOR+productName;
 		LayerizeService service = new LayerizeService(productName,sourceDir,targetDir);	
 		}
+	public void generateLayerizedServiceForAllProducts(){
+		
+	}
 }

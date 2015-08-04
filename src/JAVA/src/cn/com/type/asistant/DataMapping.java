@@ -9,4 +9,5 @@ public class DataMapping {
 	public static int NUM_OF_PER_PAGE = 100;
 	public static int MAX_NUM_TEST_CASE = 50000; //高于所有测试用例个数上限，以此来全查所有数据
 	public static String FAULT_MATRIX = "fault_matrix.txt";
+	public static String STRING_SEPERATOR = "--";
 	}

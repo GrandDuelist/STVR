@@ -10,6 +10,7 @@ public class StepToPerformBean {
 	String fileName;
 	public boolean hasBeenClustered = false;
 	public String fromTestCaseFileName="";
+	public boolean isFailed = true;
 	
 	
 	
@@ -65,7 +66,12 @@ public class StepToPerformBean {
 		return instructions;
 	}
 
-
+	public void setIsFailed(boolean isFailed){
+		this.isFailed = isFailed;
+	}
+	public boolean isFailed(){
+		return this.isFailed;
+	}
 
 	public void setInstructions(List<String> instructions) {
 		this.instructions = instructions;
