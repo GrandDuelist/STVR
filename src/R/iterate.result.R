@@ -12,7 +12,8 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
                         rerunLDA=FALSE, # Should we rerun LDA, if it's already been run?
                         verbose=FALSE,
                         iT=30,
-                        method="cluster_string")
+                        method="cluster_string",
+                        productName)
 {
   
   names <- c("36","30","35","40","50","60","80","70","90","10","11","12","13");
@@ -50,7 +51,7 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
       {
         tcp <- string.cluster(testDir=testDir2,truthName=truthName2, testDirCluster = clusterDir2);
       }else if(method=="lda_coverage"){
-	tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="max",K=5);
+	      tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="max",K=5);
       }else if(method=="lda_greedy"){
       	tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="greedy",K=5);
       }
@@ -85,15 +86,25 @@ iterate.result.all <- function(itNum=100)
 {
   
   
- #methods=c("string","random","lda_coverage","lda_greedy","cluster_string","cluster_random");
-  methods=c("cluster_string","cluster_random");
+ methods=c("string","random","lda_coverage","lda_greedy","cluster_string","cluster_random");
+ #methods=c("cluster_string","cluster_random");
   #methods=c("cluster_random");
   for(i in 1:length(methods)){
-    
     dirName = paste(methods[i],"/",sep="")
     iterate.result(iT=itNum,method=methods[i],kDir=dirName);
   }
 }
 
 
+iterate.result.all.products <- function(itNum = 10){
+  TOP_LAYERIZED_DIR = "/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA";
+  TOP_INSTRUCTION_DIR =  "/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA";
+  
+  productNames <- list.files(TOP_LAYERIZED_DIR);
+  
+  for(i in 1:length(productNames)){
+    print(productNames[i])
+  }
+  
+}
 
