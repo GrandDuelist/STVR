@@ -30,7 +30,7 @@ iterate.cluster <- function(s=NULL,  # If calling this function a second time, t
     if(!file.exists(dirname)){
       dir.create(dirname,recursive = TRUE);
     }
-    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,"",names[m],"_",method,".txt",sep="");
+    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,"",names[m],".txt",sep="");
     sink(filename);
     
     for(n in 1:iT)
@@ -83,8 +83,9 @@ iterate.cluster.all <- function(itNum=3)
 {
   
   
- #methods=c("cluster_string","cluster_random","string","random");
- methods=c("cluster_string");
+ #methods=c("cluster_random","string","random");
+ methods=c("cluster_string","cluster_random","string","random");
+# methods=c("cluster_string");
   for(i in 1:length(methods)){
     
     dirName = paste(methods[i],"/",sep="")

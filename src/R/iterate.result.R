@@ -16,22 +16,22 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
                         productName)
 {
   
-  names <- c("36","30","35","40","50","60","80","70","90","10","11","12","13");
+  names <- c("15 for Tablets","16","16 for Tablets","17","17 Tablets","18","18 Tablets","19","19 Tablets","20","20 Tablets","21","21 Tablet","22","22 Tablet","23","23 Tablet","24","24 Tablet","25","25 Tablet","26","26 Tablet","27","27 Tablet","28","28 Tablet","29","29 Tablet","30 Tablet");
   #names <- c("80");
   apfds <-matrix(nrow=length(names),ncol=iT);
   for(m in 1:length(names)){
-    testDir2=paste("../../web_lscp/data/lda_input_steps_to_perform/litmus_",names[m],"/",sep="");
-    clusterDir2=paste("../../cluster/litmus_",names[m],"/",sep="");
+    testDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA/Mobile Firefox/",names[m],"/",sep="");
+    clusterDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/Mobile Firefox/",names[m],"/",sep="");
     
     #testDir2=paste(testDir2,"/",sep="");
-    truthName2=paste("../../web_lscp/data/fault_matrix/steps_to_perform/litmus_",names[m],"/fault_matrix.txt",sep="");
+    truthName2=paste("/home/zhihan/Workspace/STVR/data/FAULT_MATRIX/Mobile Firefox/",names[m],"/fault_matrix.txt",sep="");
     
     #truthName2=(truthName2,"/fault_matrix.txt");
-    dirname = paste("result/",kDir,sep="");
+    dirname = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,sep="");
     if(!file.exists(dirname)){
-      dir.create(dirname);
+      dir.create(dirname,recursive = TRUE);
     }
-    filename = paste("result/",kDir,"litmus_",names[m],"_",method,".txt",sep="");
+    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,"",names[m],".txt",sep="");
     sink(filename);
     
     for(n in 1:iT)
