@@ -37,42 +37,54 @@ public class MatrixService {
 		this.generateFaultMatrixMap();
 		this.outputFaultMatrix();
 	}
-	
+
 	/**
 	 * 将productsMap 输出为fault matrix
 	 */
-	public void outputFaultMatrix(){
-		Iterator<Entry<String, Product>> it = this.productsMap.entrySet().iterator();
+	public void outputFaultMatrix() {
+		Iterator<Entry<String, Product>> it = this.productsMap.entrySet()
+				.iterator();
 		System.out.println(this.productsMap.entrySet().size());
 		while (it.hasNext()) { // 每个产品
 			Product currentProduct = (Product) it.next().getValue();
-			String dir = DataMapping.TOP_FAULT_MATRIX_DIR + DataMapping.PATH_SEPERATOR+currentProduct.getProductName()+DataMapping.PATH_SEPERATOR+currentProduct.getProductVersion();
+			String dir = DataMapping.TOP_FAULT_MATRIX_DIR
+					+ DataMapping.PATH_SEPERATOR
+					+ currentProduct.getProductName()
+					+ DataMapping.PATH_SEPERATOR
+					+ currentProduct.getProductVersion();
 			BasicFileController.createDirectory(dir);
-			String filePath = dir+DataMapping.PATH_SEPERATOR+DataMapping.FAULT_MATRIX;
+			String filePath = dir + DataMapping.PATH_SEPERATOR
+					+ DataMapping.FAULT_MATRIX;
 			PersonizedFileIO io = new PersonizedFileIO(filePath);
-			for (int i = 0; i < currentProduct.testCases.size(); i++) {
-				CaseStepBugsBean currentTestCase = currentProduct.testCases
-						.get(i);
-				Iterator<Entry<String, Boolean>> it2 = currentTestCase.faultMatrixMap.entrySet().iterator();
-				String line = "";
-				//line += currentTestCase.testcase.getResultID()+" ";
-				while(it2.hasNext()){
-					line+=(it2.next().getValue()?1:0)+" ";
-					
+			boolean hasMatrix = currentProduct.bugs != null
+					&& currentProduct.bugs.size() > 0;
+			if (hasMatrix) {
+				for (int i = 0; i < currentProduct.testCases.size(); i++) {
+					CaseStepBugsBean currentTestCase = currentProduct.testCases
+							.get(i);
+					Iterator<Entry<String, Boolean>> it2 = currentTestCase.faultMatrixMap
+							.entrySet().iterator();
+					String line = "";
+					// line += currentTestCase.testcase.getResultID()+" ";
+					while (it2.hasNext()) {
+						line += (it2.next().getValue() ? 1 : 0) + " ";
+
+					}
+					io.appendFile(line + "\n");
+					io.close();
 				}
-				io.appendFile(line+"\n");
-				io.close();
 			}
 		}
-		
+
 	}
 
 	/**
 	 * 找出一个版本出现的所有bugs
 	 */
 	public void generateFaultMatrixMap() {
-		Iterator<Entry<String, Product>> it = this.productsMap.entrySet().iterator();
-		
+		Iterator<Entry<String, Product>> it = this.productsMap.entrySet()
+				.iterator();
+
 		while (it.hasNext()) { // 每个产品
 			Product currentProduct = (Product) it.next().getValue();
 			// 初始化每个版本的fault matrix

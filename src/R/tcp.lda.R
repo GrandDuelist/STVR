@@ -94,7 +94,7 @@ tcp.lda <- function(
     s$lda <- .getTopFive(s$lda)
    
     .getOrderFileName(s)
-    s$otherdists <- lda.mean.fail(s);
+    #s$otherdists <- lda.mean.fail(s);
     if (verbose==TRUE){
         cat(sprintf("Done.\n"))
     }

@@ -16,22 +16,25 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
                         productName)
 {
   
-  names <- c("15 for Tablets","16","16 for Tablets","17","17 Tablets","18","18 Tablets","19","19 Tablets","20","20 Tablets","21","21 Tablet","22","22 Tablet","23","23 Tablet","24","24 Tablet","25","25 Tablet","26","26 Tablet","27","27 Tablet","28","28 Tablet","29","29 Tablet","30 Tablet");
+  #names <- c("15 for Tablets","16","16 for Tablets","17","17 Tablets","18","18 Tablets","19","19 Tablets","20","20 Tablets","21","21 Tablet","22","22 Tablet","23","23 Tablet","24","24 Tablet","25","25 Tablet","26","26 Tablet","27","27 Tablet","28","28 Tablet","29","29 Tablet","30 Tablet");
+  productDir <- paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/",productName,sep="");
+  names <- list.files(productDir);
+  
   #names <- c("80");
   apfds <-matrix(nrow=length(names),ncol=iT);
   for(m in 1:length(names)){
-    testDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA/Mobile Firefox/",names[m],"/",sep="");
-    clusterDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/Mobile Firefox/",names[m],"/",sep="");
+    testDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA/",productName,"/",names[m],"/",sep="");
+    clusterDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/",productName,"/",names[m],"/",sep="");
     
     #testDir2=paste(testDir2,"/",sep="");
-    truthName2=paste("/home/zhihan/Workspace/STVR/data/FAULT_MATRIX/Mobile Firefox/",names[m],"/fault_matrix.txt",sep="");
+    truthName2=paste("/home/zhihan/Workspace/STVR/data/FAULT_MATRIX/",productName,"/",names[m],"/fault_matrix.txt",sep="");
     
     #truthName2=(truthName2,"/fault_matrix.txt");
-    dirname = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,sep="");
+    dirname = paste("/home/zhihan/Workspace/STVR/data/RESULT/",productName,"/",kDir,sep="");
     if(!file.exists(dirname)){
       dir.create(dirname,recursive = TRUE);
     }
-    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/Mobile Firefox/",kDir,"",names[m],".txt",sep="");
+    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/",productName,"/",kDir,"",names[m],".txt",sep="");
     sink(filename);
     
     for(n in 1:iT)
@@ -82,7 +85,7 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
 }
 
 
-iterate.result.all <- function(itNum=100)
+iterate.result.all <- function(itNum=10,productName)
 {
   
   
@@ -91,19 +94,21 @@ iterate.result.all <- function(itNum=100)
   #methods=c("cluster_random");
   for(i in 1:length(methods)){
     dirName = paste(methods[i],"/",sep="")
-    iterate.result(iT=itNum,method=methods[i],kDir=dirName);
+    iterate.result(iT=itNum,method=methods[i],kDir=dirName,productName = productName);
   }
 }
 
 
-iterate.result.all.products <- function(itNum = 10){
+iterate.result.all.products <- function(itNum = 3){
   TOP_LAYERIZED_DIR = "/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA";
   TOP_INSTRUCTION_DIR =  "/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA";
   
   productNames <- list.files(TOP_LAYERIZED_DIR);
   
   for(i in 1:length(productNames)){
-    print(productNames[i])
+    
+      iterate.result.all(productName = productNames[i]);
+    
   }
   
 }
