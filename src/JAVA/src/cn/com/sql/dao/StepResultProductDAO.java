@@ -57,7 +57,7 @@ public class StepResultProductDAO implements DaoBaseInterface {
 				current.setProduct(rs.getString("name"));
 				current.setVersion(rs.getString("version"));
 				current.setResultStatus(rs.getString("result_status"));
-				current.setResultID(rs.getInt("result_id"));
+				current.setResultString(rs.getString("result_id"));
 				results.add(current);
 				
 			}

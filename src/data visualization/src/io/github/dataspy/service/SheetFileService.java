@@ -101,6 +101,7 @@ public class SheetFileService {
 			
 			try {
 				String content = BasicFileController.readFromFile(currentFile);
+			//	System.out.println(currentFile.getAbsolutePath()+content);
 				String extractInfo = DataMapping.extractFromContent(content);
 				row.createCell((short)index).setCellValue(extractInfo);
 			} catch (IOException e) {
@@ -112,10 +113,8 @@ public class SheetFileService {
 	
 	public void readHeadName() {
 		this.columnFiles = sheetFile.listFiles();
-
 		for (int i = 0; i < this.columnFiles.length; i++) {
 			File columnFile = this.columnFiles[i];
-
 		}
 
 	}

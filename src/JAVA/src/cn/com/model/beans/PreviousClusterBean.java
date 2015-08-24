@@ -8,6 +8,7 @@ public class PreviousClusterBean{
 	String previousVersionName;
 	List<StepToPerformBean> testCases = new ArrayList<StepToPerformBean>();
 	
+	
 	public String getProductName() {
 		return productName;
 	}

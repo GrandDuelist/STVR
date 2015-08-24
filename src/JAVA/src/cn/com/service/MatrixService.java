@@ -130,8 +130,12 @@ public class MatrixService {
 				currentProduct.setProductVersion(casebug.testcase.getVersion());
 				this.productsMap.put(mapKey, currentProduct);
 			}
-
-			currentProduct.bugs.addAll(casebug.bugurls);
+			for(int j=0;j<casebug.bugurls.size();j++){
+				if(!currentProduct.bugs.contains(casebug.bugurls.get(j))){
+					currentProduct.bugs.add(casebug.bugurls.get(j));
+				}	
+			}
+			
 			currentProduct.testCases.add(casebug);
 		}
 

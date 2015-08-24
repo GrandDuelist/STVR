@@ -1,18 +1,38 @@
 package cn.com.model.beans;
 
+import java.util.List;
+
+import cn.com.type.asistant.DataMapping;
+
 public class StepResultProductBean {
 	int id;
 	String resultStatus;
 	int caseversionID;
 	String version;
 	String product;
-	int resultID;
+	String resultString;
+	int[] resultIDs;
 	
-	public int getResultID(){
-		return this.resultID;
+	
+	
+	public String getResultString() {
+		return resultString;
 	}
-	public void setResultID(int resultID){
-		this.resultID = resultID;
+	public void setResultString(String resultString) {
+		this.resultString = resultString;
+		
+		//set this.resultIDs;
+		if(this.resultString!=null && !this.resultString.equals("")){
+			String[] resultIDString = resultString.split("&");
+			this.resultIDs = new int[resultIDString.length-1];
+			
+			for(int i=1;i<resultIDString.length;i++){
+				this.resultIDs[i-1] = Integer.parseInt(resultIDString[i]);
+			}
+			this.resultIDs = DataMapping.arrayUnique(this.resultIDs);
+		}
+		
+		
 	}
 	public int getId() {
 		return id;
@@ -44,6 +64,12 @@ public class StepResultProductBean {
 	public void setProduct(String product) {
 		this.product = product;
 	}
-
+	public int[] getResultIDs(){
+		return this.resultIDs;
+	}
+	public void setResultIDs(int[] resultIDs){
+		this.resultIDs = resultIDs;
+	}
+	
 	
 }

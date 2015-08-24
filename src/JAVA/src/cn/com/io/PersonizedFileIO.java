@@ -44,6 +44,10 @@ public class PersonizedFileIO {
 		}
 	}
 	
+	public void appendFileLn(String content){
+		this.appendFile(content+"\n");
+	}
+	
 	public void close(){
 		this.out.close();
 	}

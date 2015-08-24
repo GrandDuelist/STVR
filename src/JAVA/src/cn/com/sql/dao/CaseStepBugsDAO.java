@@ -22,18 +22,22 @@ public class CaseStepBugsDAO {
 	public CaseStepBugsBean selectByCaseVersionID(CaseStepBugsBean caseBug) {
 
 		try {
+			int[] resultIDs = caseBug.testcase.getResultIDs();
+			if (resultIDs != null && resultIDs.length > 0) {
+				for (int i = 0; i < resultIDs.length; i++) {
+					int resultID = resultIDs[i];
+					if (resultID != 0) {
+						String sql = "SELECT bug_url FROM execution_stepresult WHERE result_id = ?";
+						PreparedStatement pst = this.conn.prepareStatement(sql);
+						pst.setInt(1, resultID);
+						ResultSet rst = pst.executeQuery();
 
-			int resultID = caseBug.testcase.getResultID();
-			if (resultID != 0) {
-				String sql = "SELECT bug_url FROM execution_stepresult WHERE result_id = ?";
-				PreparedStatement pst = this.conn.prepareStatement(sql);
-				pst.setInt(1, resultID);
-				ResultSet rst = pst.executeQuery();
-
-				while (rst.next()) {
-					String bugUrl = rst.getString("bug_url");
-					if (bugUrl != null && !bugUrl.equals("")) {
-						caseBug.bugurls.add(bugUrl);
+						while (rst.next()) {
+							String bugUrl = rst.getString("bug_url");
+							if (bugUrl != null && !bugUrl.equals("")&&!caseBug.bugurls.contains(bugUrl)) {
+								caseBug.bugurls.add(bugUrl);
+							}
+						}
 					}
 				}
 

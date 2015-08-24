@@ -89,7 +89,7 @@ iterate.result.all <- function(itNum=10,productName)
 {
   
   
- methods=c("string","random","lda_coverage","lda_greedy","cluster_string","cluster_random");
+ methods=c("cluster_string","cluster_random","string","random","lda_coverage","lda_greedy");
  #methods=c("cluster_string","cluster_random");
   #methods=c("cluster_random");
   for(i in 1:length(methods)){
