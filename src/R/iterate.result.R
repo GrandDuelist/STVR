@@ -1,3 +1,7 @@
+source("iterate.lda.R")
+source("iterate.cluster.R")
+source("cluster.R")
+
 iterate.result <- function(s=NULL,  # If calling this function a second time, this should be
                         # resulting object of the first
                         testDir=NULL,  # Name of the directory with the preprocessed test files
@@ -16,25 +20,26 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
                         productName)
 {
   
+  dataDir = "/home/zhihan/Workspace/STVR/data"
   #names <- c("15 for Tablets","16","16 for Tablets","17","17 Tablets","18","18 Tablets","19","19 Tablets","20","20 Tablets","21","21 Tablet","22","22 Tablet","23","23 Tablet","24","24 Tablet","25","25 Tablet","26","26 Tablet","27","27 Tablet","28","28 Tablet","29","29 Tablet","30 Tablet");
-  productDir <- paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/",productName,sep="");
+  productDir <- paste(dataDir,"/LDA_LAYERIZED_DATA/",productName,sep="");
   names <- list.files(productDir);
   
   #names <- c("80");
   apfds <-matrix(nrow=length(names),ncol=iT);
   for(m in 1:length(names)){
-    testDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA/",productName,"/",names[m],"/",sep="");
-    clusterDir2=paste("/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA/",productName,"/",names[m],"/",sep="");
+    testDir2=paste(dataDir,"/LDA_INPUT_DATA/",productName,"/",names[m],"/",sep="");
+    clusterDir2=paste(dataDir,"/LDA_LAYERIZED_DATA/",productName,"/",names[m],"/",sep="");
     
     #testDir2=paste(testDir2,"/",sep="");
-    truthName2=paste("/home/zhihan/Workspace/STVR/data/FAULT_MATRIX/",productName,"/",names[m],"/fault_matrix.txt",sep="");
+    truthName2=paste(dataDir,"/FAULT_MATRIX/",productName,"/",names[m],"/fault_matrix.txt",sep="");
     
     #truthName2=(truthName2,"/fault_matrix.txt");
-    dirname = paste("/home/zhihan/Workspace/STVR/data/RESULT/",productName,"/",kDir,sep="");
+    dirname = paste(dataDir,"/RESULT/",productName,"/",kDir,sep="");
     if(!file.exists(dirname)){
       dir.create(dirname,recursive = TRUE);
     }
-    filename = paste("/home/zhihan/Workspace/STVR/data/RESULT/",productName,"/",kDir,"",names[m],".txt",sep="");
+    filename = paste(dataDir,"/RESULT/",productName,"/",kDir,"",names[m],".txt",sep="");
     sink(filename);
     
     for(n in 1:iT)
@@ -85,7 +90,7 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
 }
 
 
-iterate.result.all <- function(itNum=10,productName)
+iterate.result.all <- function(itNum=100,productName)
 {
   
   
@@ -99,7 +104,7 @@ iterate.result.all <- function(itNum=10,productName)
 }
 
 
-iterate.result.all.products <- function(itNum = 3){
+iterate.result.all.products <- function(itNum = 100){
   TOP_LAYERIZED_DIR = "/home/zhihan/Workspace/STVR/data/LDA_LAYERIZED_DATA";
   TOP_INSTRUCTION_DIR =  "/home/zhihan/Workspace/STVR/data/LDA_INPUT_DATA";
   

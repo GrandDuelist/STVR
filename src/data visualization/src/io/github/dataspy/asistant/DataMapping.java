@@ -1,7 +1,7 @@
 package io.github.dataspy.asistant;
 
 public class DataMapping {
-	public static String TOP_OUTPUT_DIR = "/home/zhihan/Workspace/STVR/data/RESULT_STATISTIC";
+	public static String TOP_OUTPUT_DIR = "/home/zhihan/Workspace/STVR/data/RESULT_STATISTICS";
 	public static String PREFIX_SEPERATOR = "medium:\"\n[1]";
 	public static String POSTFIX_SEPERATOR = null;
 	public static String TOP_DIR = "/home/zhihan/Workspace/STVR/data/RESULT";

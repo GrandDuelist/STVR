@@ -198,8 +198,10 @@ public class RepeatedTestCaseStatisticsService {
 				previousStatistics.failedInCluster++;
 			}else if(currentTestCase.getName().contains("passed")){
 				previousStatistics.notFailedInCluster++;
-			}}
-		previousStatistics.wholeInCluster++;
+			}
+			previousStatistics.wholeInCluster++;
+			}
+		
 		return previousStatistics;
 	}
 	
