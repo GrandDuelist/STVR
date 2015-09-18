@@ -35,11 +35,11 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
     truthName2=paste(dataDir,"/FAULT_MATRIX/",productName,"/",names[m],"/fault_matrix.txt",sep="");
     
     #truthName2=(truthName2,"/fault_matrix.txt");
-    dirname = paste(dataDir,"/RESULT/",productName,"/",kDir,sep="");
+    dirname = paste(dataDir,"/RESULT_REVERSE/",productName,"/",kDir,sep="");
     if(!file.exists(dirname)){
       dir.create(dirname,recursive = TRUE);
     }
-    filename = paste(dataDir,"/RESULT/",productName,"/",kDir,"",names[m],".txt",sep="");
+    filename = paste(dataDir,"/RESULT_REVERSE/",productName,"/",kDir,"",names[m],".txt",sep="");
     sink(filename);
     
     for(n in 1:iT)
@@ -59,9 +59,9 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
       {
         tcp <- string.cluster(testDir=testDir2,truthName=truthName2, testDirCluster = clusterDir2);
       }else if(method=="lda_coverage"){
-	      tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="max",K=5);
+	      tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="max",K=10);
       }else if(method=="lda_greedy"){
-      	tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="greedy",K=5);
+      	tcp <-tcp.lda(testDir=testDir2,truthName=truthName2,maximization="greedy",K=15);
       }
       #topic <- tcp.lda(testDir,K,truthName);
       apfds[m,n] <- tcp$apfd;
@@ -90,12 +90,13 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
 }
 
 
-iterate.result.all <- function(itNum=100,productName)
+iterate.result.all <- function(itNum=10,productName)
 {
   
   
- methods=c("cluster_string","cluster_random","string","random","lda_coverage","lda_greedy");
- #methods=c("cluster_string","cluster_random");
+ #methods=c("cluster_string","cluster_random","string","random","lda_coverage","lda_greedy");
+ #methods="lda_greedy"
+ methods=c("cluster_string","cluster_random");
   #methods=c("cluster_random");
   for(i in 1:length(methods)){
     dirName = paste(methods[i],"/",sep="")

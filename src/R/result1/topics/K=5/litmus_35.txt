@@ -1,6 +1,0 @@
-     [,1]       [,2]      [,3]     [,4]      [,5]      
-[1,] "firefox"  "page"    "test"   "session" "instal"  
-[2,] "search"   "bar"     "click"  "select"  "bookmark"
-[3,] "bookmark" "toolbar" "folder" "menu"    "sidebar" 
-[4,] "tab"      "click"   "window" "tool"    "menu"    
-[5,] "prefer"   "firefox" "option" "click"   "mozilla" 
