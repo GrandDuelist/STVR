@@ -1,9 +1,11 @@
 package io.github.dataspy.asistant;
 
 public class DataMapping {
+	//public static String TOP_OUTPUT_DIR = "/home/zhihan/Workspace/ICST/data/result_reverse";
 	public static String TOP_OUTPUT_DIR = "/home/zhihan/Workspace/STVR/data/RESULT_REVERSE";
 	public static String PREFIX_SEPERATOR = "medium:\"\n[1]";
 	public static String POSTFIX_SEPERATOR = null;
+	//public static String TOP_DIR = "/home/zhihan/Workspace/ICST/data/result_reverse";
 	public static String TOP_DIR = "/home/zhihan/Workspace/STVR/data/RESULT_REVERSE";
 	public static String PATH_SEPERATOR = "/";
 	public static String SHEET_TITLE = "version";

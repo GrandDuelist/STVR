@@ -8,7 +8,7 @@ import re
 import string
 from openpyxl import Workbook
 from openpyxl.reader.excel import load_workbook
-from Main import DataMapping
+import DataMapping
 def readFromFile(fileName):
     fp = open(fileName,"r+")
     result = []

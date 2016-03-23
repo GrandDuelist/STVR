@@ -90,11 +90,11 @@ public class RepeatedTestCaseStatisticsService {
 		}
 		
 		PersonizedFileIO io = new PersonizedFileIO(previousDir+DataMapping.PATH_SEPERATOR+DataMapping.STATISTICS);
-		if(previousStatistics.fromVersionStatus.equals("passed")){
+		if(previousStatistics.fromVersionStatus.equals("failed")){
 			io.appendFileLn("failedFromFailedTestCases: "+previousStatistics.failedInCluster);
 			io.appendFileLn("failedTestCases: "+previousStatistics.wholeInCluster);
 			io.appendFileLn("passedFromFailedTestCases: "+previousStatistics.notFailedInCluster);
-		}else if(previousStatistics.fromVersionStatus.equals("failed")){
+		}else if(previousStatistics.fromVersionStatus.equals("passed")){
 			io.appendFileLn("failedFromPassedTestCases: "+previousStatistics.failedInCluster);
 			io.appendFileLn("PassedTestCases: "+previousStatistics.wholeInCluster);
 			io.appendFileLn("passedFromPassedTestCases: "+previousStatistics.notFailedInCluster);

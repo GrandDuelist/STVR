@@ -1,0 +1,18 @@
+!SESSION 2016-03-21 23:36:15.352 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-03-21 23:36:20.282
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2016-03-22 09:27:53.488 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_95
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-03-22 09:27:57.683
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

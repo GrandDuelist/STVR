@@ -1,0 +1,10 @@
+package cn.com.service;
+
+public class LifeCycleService extends LayerizeService{
+
+	public LifeCycleService(String productName, String productDir,
+			String layerizedProductDir) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

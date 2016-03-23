@@ -90,7 +90,7 @@ iterate.result <- function(s=NULL,  # If calling this function a second time, th
 }
 
 
-iterate.result.all <- function(itNum=10,productName)
+iterate.result.all <- function(itNum=100,productName)
 {
   
   
